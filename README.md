@@ -53,7 +53,7 @@ smile = {face: ":)"}
 frown = {face: ":("}
 other = {other: ":P"}
 
-merge(smile).should   # => {face: ":)"}
+merge(smile)          # => {face: ":)"}
 merge(smile, **frown) # => {face: ":("}
 merge(smile, **other) # => ArgumentError
 reverse_merge(smile)  # => ArgumentError

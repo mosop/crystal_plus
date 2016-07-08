@@ -14,9 +14,43 @@ dependencies:
     github: mosop/crystal_plus
 ```
 
+## Index
+
+* [Dir](#dir)
+  * [.tmp](#dir.tmp) : makes a uniquely-named and temporary directory
+* [NamedTuple](#named_tuple)
+  * [#to_h?](#named_tuple#to_h?) : is a safe to_h
+  * [#merge](#naemd_tuple#merge) : merges two named tuples
+
+## Dir
+
+<a name="dir"></a>
+
+### .tmp
+
+<a name="dir.tmp"></a>
+
+Makes a uniquely-named directory and yields a passed block with the directory's path. The directory is to be deleted before this method returns.
+
+```crystal
+Dir.tmp do |dir|
+  # The dir argument points to a new temporary directory.
+end
+# The directory is already deleted here.
+```
+
+#### Parameters
+
+* base : a base directory's path whose a temporary directory will be created (default: `"/tmp"`)
+* cleanup : whether to delete a created temporary directory before .tmp returns (default: `true`)
+
 ## NamedTuple
 
+<a name="named_tuple"></a>
+
 ### #to_h?
+
+<a name="naemd_tuple#to_h?"></a>
 
 ```crystal
 def test_to_h(**options)
@@ -38,6 +72,8 @@ test_to_h? # => nil
 
 ## #merge
 
+<a name="named_tuple#merge"></a>
+
 ```crystal
 require "cyrstal_plus/named_tuple/#merge"
 
@@ -58,6 +94,11 @@ merge(smile, **frown) # => {face: ":("}
 merge(smile, **other) # => ArgumentError
 reverse_merge(smile)  # => ArgumentError
 ```
+
+## Release Notes
+
+* v0.1.1
+  * Dir.tmp
 
 ## Contributing
 

@@ -21,6 +21,8 @@ dependencies:
 * [NamedTuple](#named_tuple)
   * [#to_h?](#named_tuple#to_h?) : is a safe to_h
   * [#merge](#naemd_tuple#merge) : merges two named tuples
+* [String](#string)
+  * [#empty_to_nil](#string#empty_to_nil) : returns nil if empty
 
 ## Dir
 
@@ -95,8 +97,31 @@ merge(smile, **other) # => ArgumentError
 reverse_merge(smile)  # => ArgumentError
 ```
 
+## String
+
+<a name="string"></a>
+
+### #empty_to_nil
+
+<a name="string#empty_to_nil"></a>
+
+Returns nil if self is empty. Otherwise, self.
+
+```crystal
+require "cyrstal_plus/string/#empty_to_nil"
+
+def test_to_h?(**options)
+  options.to_h?
+end
+
+"abc".empty_to_nil # => "abc"
+"".empty_to_nil # => nil
+```
+
 ## Release Notes
 
+* v0.1.2
+  * String#empty_to_nil
 * v0.1.1
   * Dir.tmp
 

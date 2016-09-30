@@ -110,10 +110,6 @@ Returns nil if self is empty. Otherwise, self.
 ```crystal
 require "cyrstal_plus/string/#empty_to_nil"
 
-def test_to_h?(**options)
-  options.to_h?
-end
-
 "abc".empty_to_nil # => "abc"
 "".empty_to_nil # => nil
 ```
